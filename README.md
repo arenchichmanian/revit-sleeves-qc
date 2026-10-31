@@ -11,7 +11,7 @@ Sleeves are placed in the drainage model; pipes, ducts and cable trays come from
 
 ## sleeve_check.py / sleeve_fix.py
 
-For every `DLB-Wall Circ Opening` / `DLB-Wall Rect Opening` on the chosen level (`BHE_Level = GF`):
+For every `Wall Circ Opening` / `Wall Rect Opening` on the chosen level (`Level_Code = GF`):
 
 1. **Finds what passes through the sleeve.** It tests whether the centreline of each pipe, duct and cable tray (host model and links) crosses the sleeve's bounding box.
 2. **Opening System.** The expected value comes from where the element lives:
@@ -35,4 +35,4 @@ For every `DLB-Wall Circ Opening` / `DLB-Wall Rect Opening` on the chosen level 
 - The geometry test is a bounding-box test, not a true clash. Rotated sleeves can catch a pipe passing close by.
 - Fittings are not included, only straight pipe, duct and cable tray segments.
 - Sleeves with more than one element passing through are not size-checked.
-- Link names must contain the system token (`FP`, `WS`, `ME`, `IR`, `EL`) as a separate word, e.g. `PRJ_ME_MU`.
+- Link names must contain the system token (`FP`, `WS`, `ME`, `IR`, `EL`) as a separate word, e.g. `PRJ_ME_B1`.

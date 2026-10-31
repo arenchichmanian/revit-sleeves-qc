@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Dynamo Python node: FIXES "Opening System" on DLB-Wall Circ / Rect Opening sleeves (GF only).
+# Dynamo Python node: FIXES "Opening System" on Wall Circ / Rect Opening sleeves (GF only).
 # It WRITES TO THE MODEL. Changes a sleeve when its "Opening System" is wrong.
 # Expected value comes from where the pipes/ducts/trays through it live:
 #   link name token FP -> "FP", WS -> "WS", ME -> "HVAC", IR -> "IR", EL -> "ELEC",
@@ -36,15 +36,15 @@ OVERSIZE_TOL_MM = 25.0          # opening may exceed target by this much (total)
 INCLUDE_INSULATION = True       # add 2 x insulation thickness to member size
 SEARCH_TOL_MM = 50.0            # box expansion when looking for members inside the sleeve
 
-CIRC_FAMILY = "DLB-Wall Circ Opening"
-RECT_FAMILY = "DLB-Wall Rect Opening"
+CIRC_FAMILY = "Wall Circ Opening"
+RECT_FAMILY = "Wall Rect Opening"
 P_SYSTEM, P_DIA, P_W, P_H = "Opening System", "Opening Diameter", "Opening Width", "Opening Height"
 
 # token in link name -> value expected in "Opening System"
 LINK_VALUES = {"FP": "FP", "WS": "WS", "ME": "HVAC", "IR": "IR", "EL": "ELEC"}
 HOST_VALUE = "DR"               # active model = drainage
-LEVEL_PARAM = "BHE_Level"       # sleeve parameter that holds the floor
-LEVEL_NAME = "GF"               # only check sleeves where BHE_Level = this (ground floor). None = all
+LEVEL_PARAM = "Level_Code"       # sleeve parameter that holds the floor
+LEVEL_NAME = "GF"               # only check sleeves where Level_Code = this (ground floor). None = all
 # -----------------------------------------------------------
 
 
@@ -129,7 +129,7 @@ def seg_hits_box(p0, p1, bmin, bmax):
     return True
 
 def on_level(fi):
-    """sleeve is on the wanted floor if its BHE_Level parameter equals LEVEL_NAME (e.g. GF)"""
+    """sleeve is on the wanted floor if its Level_Code parameter equals LEVEL_NAME (e.g. GF)"""
     if not LEVEL_NAME:
         return True
     v = pval_str(fi, LEVEL_PARAM)

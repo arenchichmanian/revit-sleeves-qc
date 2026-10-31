@@ -23,22 +23,22 @@ doc = DocumentManager.Instance.CurrentDBDocument
 
 # ------------------------- CONFIG (edit me) --------------------------
 VIEW_NAMES = [
-    "LIBRARY GROUND FLOOR - BLOCK WALL BUILDERS WORK - PART E PLAN LAYOUT",
-    "LIBRARY GROUND FLOOR - BLOCK WALL BUILDERS WORK - PART D PLAN LAYOUT",
-    "LIBRARY GROUND FLOOR - BLOCK WALL BUILDERS WORK - PART C PLAN LAYOUT",
+    "GROUND FLOOR - BUILDERS WORK - PART E",
+    "GROUND FLOOR - BUILDERS WORK - PART D",
+    "GROUND FLOOR - BUILDERS WORK - PART C",
 ]
 
-SLEEVE_TAG_FAMILY = "DLB-Opening-Tag(1mm)"     # family used for NEW sleeve tags (types: Circ / Rect)
-SLEEVE_TAG_FAMILIES = ["DLB-Opening-Tag(1mm)", "DLB-Opening-Tag"]   # all families that count as a sleeve tag
-CHIP_TAG_FAMILY   = "CHIPING ELE (1mm)"
+SLEEVE_TAG_FAMILY = "Opening-Tag(1mm)"     # family used for NEW sleeve tags (types: Circ / Rect)
+SLEEVE_TAG_FAMILIES = ["Opening-Tag(1mm)", "Opening-Tag"]   # all families that count as a sleeve tag
+CHIP_TAG_FAMILY   = "Chipping-Tag(1mm)"
 CHIP_TAG_TYPE     = "Circ"
 
-SLEEVE_FAMILY_KEYS = ["dlb-wall rect opening", "dlb-wall circ opening",
-                      "wallhostedrectangular"]   # last = ST_GM_BW-WallHostedRectangular (remove if not tagged)
-CHIP_FAMILY_KEYS   = ["chipping for camera"]
+SLEEVE_FAMILY_KEYS = ["wall rect opening", "wall circ opening",
+                      "wallhostedrectangular"]   # last = GM-WallHostedRectangular (remove if not tagged)
+CHIP_FAMILY_KEYS   = ["chipping"]
 
 ROUND_PARAMS = ["Opening Diameter"]
-RECT_PARAMS  = ["Opening Width", "Opening Length", "BHE_Width"]
+RECT_PARAMS  = ["Opening Width", "Opening Length", "Width"]
 ROUND_WORDS  = ["circ", "round"]
 RECT_WORDS   = ["rect", "square"]
 

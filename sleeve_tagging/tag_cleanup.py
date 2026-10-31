@@ -25,7 +25,7 @@ VIEW_NAMES = [
 SLEEVE_TAG_FAMILY = "Sleeve-Tag-A"
 CHIP_TAG_FAMILY   = "Chipping-Tag"
 SLEEVE_FAMILY_KEYS = ["rect opening", "circ opening", "wallhostedrectangular"]
-CHIP_FAMILY_KEYS   = ["chipping for camera"]
+CHIP_FAMILY_KEYS   = ["chipping"]
 
 RUN    = IN[0] if len(IN) > 0 else False
 DELETE = IN[1] if len(IN) > 1 else False
